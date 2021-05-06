@@ -9,3 +9,11 @@ require 'faker'
 10.times do
   city = City.create!(city_name: Faker::Address.city)
 end
+
+30.times do 
+	dog = Dog.create(name: Faker::FunnyName.name, city_id: rand((City.first.id)..(City.last.id)))
+end
+
+20.times do
+	dog = Dogsitter.create(name: Faker::Name.name, city_id: rand((City.first.id)..(City.last.id)))
+end
